@@ -1,6 +1,14 @@
-#intro {
+.container {
+  max-width: 500px;
   text-align: center;
 }
-.form-signin {
-  text-align: center;
+
+.intro {
+
 }
+
+.signin {
+  margin-top: 5%;
+}
+
+

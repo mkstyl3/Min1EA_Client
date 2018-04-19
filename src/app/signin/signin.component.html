@@ -1,21 +1,17 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div id="intro">
-  <img [src]='img' class="logo" alt="logo" />
-
-  <h4>Exam available on GitHub:<a target="_blank" rel="noopener" href="https://github.com/mkstyl3/Min1EA"> link</a></h4>
-  <button class="btn btn-lg btn-primary" (click)="test()">Test</button>
-</div>
-<form class="form-signin">
-  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-  <label for="inputEmail" class="sr-only">Email address</label>
-  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-  <div class="checkbox mb-3">
-    <label>
-      <input type="checkbox" value="remember-me"> Remember me
-    </label>
+<div class="container" ng-controller="SignInCtrl" ng-cloak>
+  <div id="intro">
+    <img [src]='img' class="logo" alt="logo" />
+    <h4>Exam available on GitHub:<a target="_blank" rel="noopener" href="https://github.com/mkstyl3/Min1EA"> link</a></h4>
+    <button class="btn btn-lg btn-primary" (click)="test()">Test</button>
   </div>
-  <button class="btn btn-lg btn-primary btn-block" (click)="signIn()" >Sign in</button>
-  <p class="mt-5 mb-3 text-muted">EA© Spring 2017-2018</p>
-</form>
+  <div class="signin">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <label for="inputUsername" class="sr-only">Username</label>
+    <input #username type="text" id="inputUsername" class="form-control" placeholder="Username" required="" autofocus="">
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input #password type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+    <button class="btn btn-lg btn-primary btn-block" (click)="signIn(username.value, password.value)">Sign in</button>
+    <p class="mt-5 mb-3 text-muted">EA© Spring 2017-2018</p>
+  </div>
+</div>

@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {User} from '../models/user.model';
-
+import {Login} from '../models/login.model';
+import {Observable} from 'rxjs/Observable';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -22,8 +23,9 @@ export class UserService {
     return this.http.get(url + '/test');
   }
 
-  /*
-  signIn$(user) {
-    return this.http.post(url + '/test', )
-  }*/
+  signIn$(username: string, password: string): Observable<Login> {
+    return this.http.post<Login>(url + '/signIn', new Login(null,null, {username, password}, null, null));
+  }
+
+
 }
